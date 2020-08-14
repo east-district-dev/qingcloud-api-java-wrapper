@@ -503,4 +503,40 @@ public interface IQingCloudWSClient {
 			CreateS2ServerRequest createS2ServerRequest)
 			throws QingCloudClientException, QingCloudServiceException, IOException;
 
+	public DescribeS2GroupsResponse describeS2Groups(
+			DescribeS2GroupsRequest describeS2GroupsRequest)
+			throws QingCloudClientException, QingCloudServiceException, IOException;
+
+	public DescribeS2AccountsResponse describeS2Accounts(
+			DescribeS2AccountsRequest describeS2AccountsRequest)
+			throws QingCloudClientException, QingCloudServiceException, IOException;
+
+	public DescribeS2SharedTargetsResponse describeS2SharedTargets(
+			DescribeS2SharedTargetsRequest describeS2SharedTargetsRequest)
+			throws QingCloudClientException, QingCloudServiceException, IOException;
+
+	public CreateS2AccountResponse createS2Account(
+			CreateS2AccountRequest createS2AccountRequest)
+			throws QingCloudClientException, QingCloudServiceException, IOException;
+
+	public CreateS2GroupResponse createS2Group(
+			CreateS2GroupRequest createS2GroupRequest)
+			throws QingCloudClientException, QingCloudServiceException, IOException;
+
+	public CreateS2SharedTargetResponse createS2SharedTarget(
+			CreateS2SharedTargetRequest createS2SharedTargetRequest)
+			throws QingCloudClientException, QingCloudServiceException, IOException;
+
+	public AssociateS2AccountGroupResponse associateS2AccountGroup(
+			AssociateS2AccountGroupRequest associateS2AccountGroupRequest)
+			throws QingCloudClientException, QingCloudServiceException, IOException;
+
+	public DissociateS2AccountGroupResponse dissociateS2AccountGroup(
+			DissociateS2AccountGroupRequest dissociateS2AccountGroupRequest)
+			throws QingCloudClientException, QingCloudServiceException, IOException;
+
+	public UpdateS2ServersResponse updateS2Servers(
+			UpdateS2ServersRequest updateS2ServersRequest)
+			throws QingCloudClientException, QingCloudServiceException, IOException;
+
 }

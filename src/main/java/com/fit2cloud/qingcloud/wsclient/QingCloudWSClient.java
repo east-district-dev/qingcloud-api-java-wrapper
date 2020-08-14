@@ -2850,4 +2850,138 @@ public class QingCloudWSClient implements IQingCloudWSClient {
         }
         return createS2ServerResponse;
     }
+
+    public DescribeS2GroupsResponse describeS2Groups(DescribeS2GroupsRequest describeS2GroupsRequest) throws QingCloudClientException, QingCloudServiceException, IOException {
+        DescribeS2GroupsResponse describeS2GroupsResponse = null;
+        String httpMethod = "GET";
+        String action = QingCloudAction.DESCRIBE_S2_GROUPS;
+        try {
+            String jsonResponse = this.sendRequest(httpMethod, action, describeS2GroupsRequest);
+            describeS2GroupsResponse = DescribeS2GroupsResponse.fromJson(jsonResponse,DescribeS2GroupsResponse.class);
+        } catch (QingCloudClientException e) {
+            throw e;
+        } catch (QingCloudServiceException e) {
+            throw e;
+        }
+        return describeS2GroupsResponse;
+    }
+    public DescribeS2AccountsResponse describeS2Accounts(DescribeS2AccountsRequest describeS2AccountsRequest) throws QingCloudClientException, QingCloudServiceException, IOException {
+        DescribeS2AccountsResponse describeS2AccountsResponse = null;
+        String httpMethod = "GET";
+        String action = QingCloudAction.DESCRIBE_S2_ACCOUNTS;
+        try {
+            String jsonResponse = this.sendRequest(httpMethod, action, describeS2AccountsRequest);
+            describeS2AccountsResponse = DescribeS2GroupsResponse.fromJson(jsonResponse,DescribeS2AccountsResponse.class);
+        } catch (QingCloudClientException e) {
+            throw e;
+        } catch (QingCloudServiceException e) {
+            throw e;
+        }
+        return describeS2AccountsResponse;
+    }
+
+    public DescribeS2SharedTargetsResponse describeS2SharedTargets(DescribeS2SharedTargetsRequest describeS2SharedTargetsRequest) throws QingCloudClientException, QingCloudServiceException, IOException {
+        DescribeS2SharedTargetsResponse describeS2SharedTargetsResponse = null;
+        String httpMethod = "GET";
+        String action = QingCloudAction.DESCRIBE_S2_SHARED_TARGETS;
+        try {
+            String jsonResponse = this.sendRequest(httpMethod, action, describeS2SharedTargetsRequest);
+            describeS2SharedTargetsResponse = DescribeS2SharedTargetsResponse.fromJson(jsonResponse,DescribeS2SharedTargetsResponse.class);
+        } catch (QingCloudClientException e) {
+            throw e;
+        } catch (QingCloudServiceException e) {
+            throw e;
+        }
+        return describeS2SharedTargetsResponse;
+    }
+
+    public CreateS2GroupResponse createS2Group(CreateS2GroupRequest createS2GroupRequest) throws QingCloudClientException, QingCloudServiceException, IOException {
+        CreateS2GroupResponse createS2GroupResponse = null;
+        String httpMethod = "GET";
+        String action = QingCloudAction.CREATE_S2_GROUP;
+        try {
+            String jsonResponse = this.sendRequest(httpMethod, action, createS2GroupRequest);
+            createS2GroupResponse = DescribeS2SharedTargetsResponse.fromJson(jsonResponse,CreateS2GroupResponse.class);
+        } catch (QingCloudClientException e) {
+            throw e;
+        } catch (QingCloudServiceException e) {
+            throw e;
+        }
+        return createS2GroupResponse;
+    }
+
+    public CreateS2AccountResponse createS2Account(CreateS2AccountRequest createS2AccountRequest) throws QingCloudClientException, QingCloudServiceException, IOException {
+        CreateS2AccountResponse createS2AccountResponse = null;
+        String httpMethod = "GET";
+        String action = QingCloudAction.CREATE_S2_ACCOUNT;
+        try {
+            String jsonResponse = this.sendRequest(httpMethod, action, createS2AccountRequest);
+            createS2AccountResponse = DescribeS2SharedTargetsResponse.fromJson(jsonResponse,CreateS2AccountResponse.class);
+        } catch (QingCloudClientException e) {
+            throw e;
+        } catch (QingCloudServiceException e) {
+            throw e;
+        }
+        return createS2AccountResponse;
+    }
+
+    public CreateS2SharedTargetResponse createS2SharedTarget(CreateS2SharedTargetRequest createS2SharedTargetRequest)throws QingCloudClientException, QingCloudServiceException, IOException{
+        CreateS2SharedTargetResponse createS2SharedTargetResponse = null;
+        String httpMethod = "GET";
+        String action = QingCloudAction.CREATE_S2_SHARED_TARGET;
+        try {
+            String jsonResponse = this.sendRequest(httpMethod, action, createS2SharedTargetRequest);
+            createS2SharedTargetResponse = DescribeS2SharedTargetsResponse.fromJson(jsonResponse,CreateS2SharedTargetResponse.class);
+        } catch (QingCloudClientException e) {
+            throw e;
+        } catch (QingCloudServiceException e) {
+            throw e;
+        }
+        return createS2SharedTargetResponse;
+    };
+
+    public AssociateS2AccountGroupResponse associateS2AccountGroup(AssociateS2AccountGroupRequest associateS2AccountGroupRequest)throws QingCloudClientException, QingCloudServiceException, IOException{
+        AssociateS2AccountGroupResponse associateS2AccountGroupResponse = null;
+        String httpMethod = "GET";
+        String action = QingCloudAction.ASSOCIATE_S2_ACCOUNT_GROUP;
+        try {
+            String jsonResponse = this.sendRequest(httpMethod, action, associateS2AccountGroupRequest);
+            associateS2AccountGroupResponse = DescribeS2SharedTargetsResponse.fromJson(jsonResponse,AssociateS2AccountGroupResponse.class);
+        } catch (QingCloudClientException e) {
+            throw e;
+        } catch (QingCloudServiceException e) {
+            throw e;
+        }
+        return associateS2AccountGroupResponse;
+    };
+
+    public DissociateS2AccountGroupResponse dissociateS2AccountGroup(DissociateS2AccountGroupRequest dissociateS2AccountGroupRequest)throws QingCloudClientException, QingCloudServiceException, IOException{
+        DissociateS2AccountGroupResponse dissociateS2AccountGroupResponse = null;
+        String httpMethod = "GET";
+        String action = QingCloudAction.DISSOCIATE_S2_ACCOUNT_GROUP;
+        try {
+            String jsonResponse = this.sendRequest(httpMethod, action, dissociateS2AccountGroupRequest);
+            dissociateS2AccountGroupResponse = DissociateS2AccountGroupResponse.fromJson(jsonResponse,DissociateS2AccountGroupResponse.class);
+        } catch (QingCloudClientException e) {
+            throw e;
+        } catch (QingCloudServiceException e) {
+            throw e;
+        }
+        return dissociateS2AccountGroupResponse;
+    };
+
+    public UpdateS2ServersResponse updateS2Servers(UpdateS2ServersRequest updateS2ServersRequest) throws QingCloudClientException, QingCloudServiceException, IOException{
+        UpdateS2ServersResponse updateS2ServersResponse = null;
+        String httpMethod = "GET";
+        String action = QingCloudAction.UPDATE_S2_SERVERS;
+        try {
+            String jsonResponse = this.sendRequest(httpMethod, action, updateS2ServersRequest);
+            updateS2ServersResponse = DissociateS2AccountGroupResponse.fromJson(jsonResponse,UpdateS2ServersResponse.class);
+        } catch (QingCloudClientException e) {
+            throw e;
+        } catch (QingCloudServiceException e) {
+            throw e;
+        }
+        return updateS2ServersResponse;
+    }
 }

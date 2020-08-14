@@ -185,6 +185,20 @@ public class QingCloudAction {
     public static final String DESCRIBE_S2_SERVERS = "DescribeS2Servers";
     public static final String CREATE_S2_SERVER = "CreateS2Server";
 
+    public static final String DESCRIBE_S2_GROUPS = "DescribeS2Groups";
+    public static final String CREATE_S2_GROUP = "CreateS2Group";
+
+    public static final String DESCRIBE_S2_ACCOUNTS = "DescribeS2Accounts";
+    public static final String CREATE_S2_ACCOUNT = "CreateS2Account";
+    public static final String ASSOCIATE_S2_ACCOUNT_GROUP= "AssociateS2AccountGroup";
+    public static final String DISSOCIATE_S2_ACCOUNT_GROUP = "DissociateS2AccountGroup";
+
+    public static final String DESCRIBE_S2_SHARED_TARGETS = "DescribeS2SharedTargets";
+    public static final String CREATE_S2_SHARED_TARGET = "CreateS2SharedTarget";
+
+    public static final String UPDATE_S2_SERVERS = "UpdateS2Servers";
+
+
 }
 
 

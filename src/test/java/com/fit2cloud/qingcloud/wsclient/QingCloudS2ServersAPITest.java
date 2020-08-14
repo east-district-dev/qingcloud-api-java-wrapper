@@ -126,8 +126,8 @@ public class QingCloudS2ServersAPITest {
         DescribeS2ServersResponse describeS2ServersResponse = qingCloudWSClient.describeS2Servers(describeS2ServersRequest);
         List<QingCloudS2Server> s2_server_set = describeS2ServersResponse.getS2_server_set();
 
-        String s2_server_id = createS2ServerResponse.getS2_server_id();
-        System.out.println("s2_server_id : " + s2_server_id);
+//        String s2_server_id = createS2ServerResponse.getS2_server_id();
+//        System.out.println("s2_server_id : " + s2_server_id);
 
     }
 }

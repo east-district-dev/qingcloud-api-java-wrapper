@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 
 public class CreateS2ServerResponse {
     private String action;
-    private String s2_server_id;
+    private String s2_server;
     private String job_id;
     private Integer ret_code;
     private String message;
@@ -23,12 +23,12 @@ public class CreateS2ServerResponse {
         this.action = action;
     }
 
-    public String getS2_server_id() {
-        return s2_server_id;
+    public String getS2_server() {
+        return s2_server;
     }
 
-    public void setS2_server_id(String s2_server_id) {
-        this.s2_server_id = s2_server_id;
+    public void setS2_server(String s2_server) {
+        this.s2_server = s2_server;
     }
 
     public String getJob_id() {
