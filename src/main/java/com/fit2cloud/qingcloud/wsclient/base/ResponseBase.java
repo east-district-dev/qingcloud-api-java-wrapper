@@ -13,6 +13,7 @@ public class ResponseBase {
     private Integer total_count = 0;
     private Integer ret_code;
     private String message;
+    private String job_id;
 
     public static <T> T fromJson(String jsonCreateS2ServersResponse,Class<T> tClass) {
         Gson gson = new Gson();
@@ -84,5 +85,13 @@ public class ResponseBase {
 
     public void setAction(String action) {
         this.action = action;
+    }
+
+    public String getJob_id() {
+        return job_id;
+    }
+
+    public void setJob_id(String job_id) {
+        this.job_id = job_id;
     }
 }

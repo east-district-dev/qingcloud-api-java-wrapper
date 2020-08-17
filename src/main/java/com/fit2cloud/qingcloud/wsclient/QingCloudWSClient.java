@@ -2827,7 +2827,7 @@ public class QingCloudWSClient implements IQingCloudWSClient {
         try {
             String jsonResponse = this.sendRequest(httpMethod, action,
                     describeS2ServersRequest);
-            describeS2ServersResponse = DescribeS2ServersResponse.fromJson(jsonResponse);
+            describeS2ServersResponse = DescribeS2ServersResponse.fromJson(jsonResponse,DescribeS2ServersResponse.class);
         } catch (QingCloudClientException e) {
             throw e;
         } catch (QingCloudServiceException e) {
@@ -2842,7 +2842,7 @@ public class QingCloudWSClient implements IQingCloudWSClient {
         String action = QingCloudAction.CREATE_S2_SERVER;
         try {
             String jsonResponse = this.sendRequest(httpMethod, action, createS2ServerRequest);
-            createS2ServerResponse = CreateS2ServerResponse.fromJson(jsonResponse);
+            createS2ServerResponse = CreateS2ServerResponse.fromJson(jsonResponse,CreateS2ServerResponse.class);
         } catch (QingCloudClientException e) {
             throw e;
         } catch (QingCloudServiceException e) {
@@ -2976,7 +2976,7 @@ public class QingCloudWSClient implements IQingCloudWSClient {
         String action = QingCloudAction.UPDATE_S2_SERVERS;
         try {
             String jsonResponse = this.sendRequest(httpMethod, action, updateS2ServersRequest);
-            updateS2ServersResponse = DissociateS2AccountGroupResponse.fromJson(jsonResponse,UpdateS2ServersResponse.class);
+            updateS2ServersResponse = UpdateS2ServersResponse.fromJson(jsonResponse,UpdateS2ServersResponse.class);
         } catch (QingCloudClientException e) {
             throw e;
         } catch (QingCloudServiceException e) {

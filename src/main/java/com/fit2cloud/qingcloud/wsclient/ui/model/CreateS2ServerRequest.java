@@ -1,11 +1,13 @@
 package com.fit2cloud.qingcloud.wsclient.ui.model;
 
+import com.fit2cloud.qingcloud.wsclient.base.RequestBase;
+
 /* Bug1.官方文档给出的网络请求参数是vxnet_id,但实际调用时发现会报错，内容是：missing parameter [vxnet]；
  *      因此增加了vxnet的请求参数来代替vxnet_id;
  * Bug2.官方文档给出的名称请求参数是name,但实际调用时发现，给name赋值并不能创建出带名称的vnas服务；
  *      因此将name改为s2_server_name;
  */
-public class CreateS2ServerRequest extends Request {
+public class CreateS2ServerRequest extends RequestBase {
     private String vxnet_id;//bug1
     private String vxnet;
     private String service_type;
@@ -15,7 +17,6 @@ public class CreateS2ServerRequest extends Request {
     private String private_ip;
     private String description;
     private Integer s2_class;
-    private String zone;
 
     public String getVxnet_id() {
         return vxnet_id;
@@ -87,13 +88,5 @@ public class CreateS2ServerRequest extends Request {
 
     public void setS2_class(Integer s2_class) {
         this.s2_class = s2_class;
-    }
-
-    public String getZone() {
-        return zone;
-    }
-
-    public void setZone(String zone) {
-        this.zone = zone;
     }
 }

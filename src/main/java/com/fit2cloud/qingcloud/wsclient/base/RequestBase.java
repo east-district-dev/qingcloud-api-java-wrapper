@@ -1,6 +1,5 @@
 package com.fit2cloud.qingcloud.wsclient.base;
 
-import java.util.List;
 import com.fit2cloud.qingcloud.wsclient.ui.model.Request;
 
 public class RequestBase extends Request {
