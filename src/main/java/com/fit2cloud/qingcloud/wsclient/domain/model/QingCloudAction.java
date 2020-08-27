@@ -198,6 +198,8 @@ public class QingCloudAction {
 
     public static final String UPDATE_S2_SERVERS = "UpdateS2Servers";
 
+    //Project
+    public static final String DESCRIBE_PROJECTS = "DescribeProjects";
 
 }
 

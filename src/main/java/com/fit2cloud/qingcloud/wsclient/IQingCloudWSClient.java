@@ -539,4 +539,8 @@ public interface IQingCloudWSClient {
 			UpdateS2ServersRequest updateS2ServersRequest)
 			throws QingCloudClientException, QingCloudServiceException, IOException;
 
+	//----------------------------------- Project -------------------------------------------
+	public DescribeProjectsResponse describeProjects(
+			DescribeProjectsRequest describeProjectsRequest)
+			throws QingCloudClientException, QingCloudServiceException, IOException;
 }

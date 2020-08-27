@@ -61,10 +61,13 @@ public class QingCloudInstancesAPITest {
 //		describeInstancesRequest.setLimit(limit);
 //		describeInstancesRequest.setOffset(offset);
 //		describeInstancesRequest.setSearch_word(search_word);
-		//describeInstancesRequest.setStatus(status);
+
+		List<String> statusList = new ArrayList<String>();
+		statusList.add(status);
+		describeInstancesRequest.setStatus(statusList);
 		describeInstancesRequest.setVerbose(1);
 		
-		describeInstancesRequest.setZone(QingCloudZone.PEK2);
+		describeInstancesRequest.setZone("sh1a");
 
 		DescribeInstancesResponse describeInstancesResponse = qingCloudWSClient.describeInstances(describeInstancesRequest);
 		assertTrue(describeInstancesResponse!=null);

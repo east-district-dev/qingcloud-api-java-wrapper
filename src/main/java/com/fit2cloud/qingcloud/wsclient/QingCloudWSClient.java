@@ -2984,4 +2984,21 @@ public class QingCloudWSClient implements IQingCloudWSClient {
         }
         return updateS2ServersResponse;
     }
+
+    public DescribeProjectsResponse describeProjects(DescribeProjectsRequest describeProjectsRequest) throws QingCloudClientException, QingCloudServiceException, IOException {
+        DescribeProjectsResponse describeProjectsResponse = null;
+        String httpMethod = "GET";
+        String action = QingCloudAction.DESCRIBE_PROJECTS;
+        try {
+            String jsonResponse = this.sendRequest(httpMethod, action,
+                    describeProjectsRequest);
+            describeProjectsResponse = DescribeProjectsResponse.fromJson(jsonResponse);
+        } catch (QingCloudClientException e) {
+            throw e;
+        } catch (QingCloudServiceException e) {
+            throw e;
+        }
+        return describeProjectsResponse;
+    }
+
 }

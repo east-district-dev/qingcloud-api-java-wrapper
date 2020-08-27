@@ -34,6 +34,7 @@ public class QingCloudInstance {
     private String device;
     private String repl;
     private QingCloudInstanceExtra extra;
+	private List<QingCloudProject> resource_project_info;
 
 	public QingCloudInstanceExtra getExtra() {
 		return extra;
@@ -202,5 +203,13 @@ public class QingCloudInstance {
 
 	public void setRepl(String repl) {
 		this.repl = repl;
+	}
+
+	public List<QingCloudProject> getResource_project_info() {
+		return resource_project_info;
+	}
+
+	public void setResource_project_info(List<QingCloudProject> resource_project_info) {
+		this.resource_project_info = resource_project_info;
 	}
 }
