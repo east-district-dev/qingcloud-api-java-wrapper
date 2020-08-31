@@ -1,12 +1,14 @@
 package com.fit2cloud.qingcloud.wsclient.base;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
-import java.lang.reflect.Field;
+import java.beans.BeanInfo;
+import java.beans.Introspector;
+import java.beans.PropertyDescriptor;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ResponseBase {
     private String action;
@@ -21,32 +23,45 @@ public class ResponseBase {
         return t;
     }
 
-    public <T> List<HashMap<String,T>> fromListHashMap(Class<T>tClass){
-        List<HashMap<String,T>> mapList = new ArrayList<HashMap<String,T>>();
+
+    public <T> List<Map<String,T>> fromListHashMap(Class<T>tClass){
+        List<Map<String,T>> mapList = new ArrayList<Map<String,T>>();
         List<Object> list = getSubClassPro();
         for(Object object:list){
-            HashMap<String,T> hashMap = fromHashMap(object,tClass);
-            mapList.add(hashMap);
+            Map<String,T> map = fromHashMap(object,tClass);
+            mapList.add(map);
         }
         return mapList;
     }
 
-    public <T> HashMap<String,T> fromHashMap(Object requestClass,Class<T>tClass){
-        HashMap<String,T> hashMap = new HashMap<String, T>();
-        Field[] fields = requestClass.getClass().getDeclaredFields();
-        for(int i = 0 ; i < fields.length; i++){
-            try{
-                boolean accessFlag = fields[i].isAccessible();
-                fields[i].setAccessible(true);
-                if(fields[i].get(requestClass) != null && fields[i].getName().indexOf("$") == -1){
-                    hashMap.put(fields[i].getName(), (T)fields[i].get(requestClass));
-                }
-                fields[i].setAccessible(accessFlag);
-            }catch (Exception e){
-                e.printStackTrace();
+    public <T> Map<String,T> fromHashMap(Object requestClass,Class<T>tClass){
+//        HashMap<String,T> hashMap = new HashMap<String, T>();
+//        Field[] fields = requestClass.getClass().getDeclaredFields();
+//        for(int i = 0 ; i < fields.length; i++){
+//            try{
+//                boolean accessFlag = fields[i].isAccessible();
+//                fields[i].setAccessible(true);
+//                if(fields[i].get(requestClass) != null && fields[i].getName().indexOf("$") == -1){
+//                    hashMap.put(fields[i].getName(), (T)fields[i].get(requestClass));
+//                }
+//                fields[i].setAccessible(accessFlag);
+//            }catch (Exception e){
+//                e.printStackTrace();
+//            }
+//        }
+        Map<String, T> objectAsMap = new HashMap<String, T>();
+        try {
+            BeanInfo info = Introspector.getBeanInfo(this.getClass());
+            for (PropertyDescriptor pd : info.getPropertyDescriptors()) {
+                Method reader = pd.getReadMethod();
+                if (reader != null)
+                    objectAsMap.put(pd.getName(), (T)reader.invoke(this));
             }
+            objectAsMap.remove("class");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        return hashMap;
+        return objectAsMap;
     }
 
     public List getSubClassPro(){
